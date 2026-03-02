@@ -7,3 +7,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @ijeoma270 — feat: build task board landing page with hero sect
 - @benfoster-dev — feat: implement task creation form with Soroban co
 - @brightpixel-dev — feat: add task listing page with status filters
+- @Dev-Bridge01 — feat: implement wallet connect/disconnect flow
