@@ -8,3 +8,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @benfoster-dev — feat: implement task creation form with Soroban co
 - @brightpixel-dev — feat: add task listing page with status filters
 - @Dev-Bridge01 — feat: implement wallet connect/disconnect flow
+- @nonsobethel0-dev — feat: add task detail page with contributor assign
