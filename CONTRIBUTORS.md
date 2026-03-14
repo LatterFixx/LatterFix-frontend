@@ -10,3 +10,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @Dev-Bridge01 — feat: implement wallet connect/disconnect flow
 - @nonsobethel0-dev — feat: add task detail page with contributor assign
 - @oluebubejoy — fix: resolve hydration mismatch on wallet state
+- @brightcli-stack — feat: implement payment release flow via smart con
