@@ -11,3 +11,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @nonsobethel0-dev — feat: add task detail page with contributor assign
 - @oluebubejoy — fix: resolve hydration mismatch on wallet state
 - @brightcli-stack — feat: implement payment release flow via smart con
+- @ogazboiz — feat: add XLM balance display with Horizon API
