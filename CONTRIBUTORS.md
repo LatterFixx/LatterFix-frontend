@@ -14,3 +14,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @ogazboiz — feat: add XLM balance display with Horizon API
 - @chimav-90 — fix: correct stroop-to-XLM conversion in payment d
 - @onyillto — feat: add contributor dashboard with active tasks
+- @MarvyNwaokobia — feat: implement task search and BPM genre filter
