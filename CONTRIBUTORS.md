@@ -15,3 +15,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @chimav-90 — fix: correct stroop-to-XLM conversion in payment d
 - @onyillto — feat: add contributor dashboard with active tasks
 - @MarvyNwaokobia — feat: implement task search and BPM genre filter
+- @edehvictor — fix: handle Freighter not installed error graceful
