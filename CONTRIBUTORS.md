@@ -16,3 +16,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @onyillto — feat: add contributor dashboard with active tasks
 - @MarvyNwaokobia — feat: implement task search and BPM genre filter
 - @edehvictor — fix: handle Freighter not installed error graceful
+- @Rickyy1017 — feat: add task deadline countdown component
