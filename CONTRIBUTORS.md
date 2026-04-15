@@ -18,3 +18,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @edehvictor — fix: handle Freighter not installed error graceful
 - @Rickyy1017 — feat: add task deadline countdown component
 - @Uchechukwu-Ekezie — feat: implement dark mode with next-themes
+- @boys-cyberhub — refactor: extract reusable TaskCard component
