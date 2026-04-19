@@ -19,3 +19,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @Rickyy1017 — feat: add task deadline countdown component
 - @Uchechukwu-Ekezie — feat: implement dark mode with next-themes
 - @boys-cyberhub — refactor: extract reusable TaskCard component
+- @ijeoma270 — feat: add platform fee display (5% on task complet
