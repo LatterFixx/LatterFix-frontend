@@ -22,3 +22,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @ijeoma270 — feat: add platform fee display (5% on task complet
 - @benfoster-dev — fix: fix mobile responsive layout on task board
 - @brightpixel-dev — feat: add loading skeleton states for async contra
+- @Dev-Bridge01 — feat: implement task status workflow (Open→Active→
