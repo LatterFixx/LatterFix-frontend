@@ -23,3 +23,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @benfoster-dev — fix: fix mobile responsive layout on task board
 - @brightpixel-dev — feat: add loading skeleton states for async contra
 - @Dev-Bridge01 — feat: implement task status workflow (Open→Active→
+- @nonsobethel0-dev — fix: resolve CORS issue with testnet RPC endpoint
