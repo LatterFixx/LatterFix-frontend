@@ -25,3 +25,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @Dev-Bridge01 — feat: implement task status workflow (Open→Active→
 - @nonsobethel0-dev — fix: resolve CORS issue with testnet RPC endpoint
 - @oluebubejoy — feat: add notification toast on successful task cr
+- @brightcli-stack — feat: implement paginated task list with infinite 
