@@ -26,3 +26,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @nonsobethel0-dev — fix: resolve CORS issue with testnet RPC endpoint
 - @oluebubejoy — feat: add notification toast on successful task cr
 - @brightcli-stack — feat: implement paginated task list with infinite 
+- @ogazboiz — chore: update contract bindings to latest Soroban 
