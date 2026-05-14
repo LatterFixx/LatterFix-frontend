@@ -28,3 +28,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @brightcli-stack — feat: implement paginated task list with infinite 
 - @ogazboiz — chore: update contract bindings to latest Soroban 
 - @chimav-90 — feat: add task creator profile page with earnings 
+- @onyillto — fix: handle network switching between testnet and 
