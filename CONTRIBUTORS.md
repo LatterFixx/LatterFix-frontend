@@ -30,3 +30,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @chimav-90 — feat: add task creator profile page with earnings 
 - @onyillto — fix: handle network switching between testnet and 
 - @MarvyNwaokobia — feat: add CSV export for completed task payments
+- @edehvictor — docs: update README with setup guide and contract 
