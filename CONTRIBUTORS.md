@@ -32,3 +32,4 @@ Thank you to everyone who has contributed to LatterFix!
 - @MarvyNwaokobia — feat: add CSV export for completed task payments
 - @edehvictor — docs: update README with setup guide and contract 
 - @Rickyy1017 — chore: bump dependencies and fix peer dependency w
+
