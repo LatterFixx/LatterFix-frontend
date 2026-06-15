@@ -1,122 +1,91 @@
-# 📋 Stellar Task Manager - Decentralized Work Management
+# TaskManager Pro - Decentralized Escrow and Bounty Management Protocol
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Rust](https://img.shields.io/badge/Rust-1.84%2B-orange.svg)](https://www.rust-lang.org)
 [![Stellar](https://img.shields.io/badge/Stellar-Soroban-blue.svg)](https://stellar.org)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![GitHub Issues](https://img.shields.io/github/issues/yourusername/stellar-task-manager)](https://github.com/yourusername/stellar-task-manager/issues)
 
-<!-- <div align="center">
-  <img src="https://stellar.org/images/og-image.jpg" alt="Stellar Logo" width="200"/>
-  <h3>A Decentralized Task Management System on the Stellar Network</h3>
-  <p><i>Connect task creators with contributors through smart contracts</i></p>
-</div> -->
+<div align="center">
+  <img src="./assets/banner.png" alt="TaskManager Pro Banner" width="800"/>
+  <h3>A Decentralized Milestone and Payout Escrow Network on Stellar</h3>
+  <p><i>Securely fund, track, and complete professional tasks utilizing automated smart-contract escrows.</i></p>
+</div>
 
 ---
 
-## 🌟 Overview
+## Overview
 
-The **Stellar Task Manager** is a Soroban smart contract that enables decentralized task management on the Stellar blockchain. It allows users to create tasks, assign them to contributors, manage workflow states, and automatically release payments with platform fees.
+TaskManager Pro is a next-generation decentralized workflow and bounty management system powered by Stellar's Soroban smart contracts. The protocol connects project administrators/creators with developers, ensuring funds are locked securely in on-chain escrows and paid out upon satisfactory work delivery. 
 
-### 🎯 Perfect for Open Source Contributors!
-
-This project is specifically designed with **10 distinct issues** that are perfect for developers learning Rust and Soroban development. Each issue is self-contained, well-documented, and comes with clear acceptance criteria.
+By utilizing Stellar's native token transfers and fast ledger times, TaskManager Pro reduces payment counterparty risks, implements platform fee routing, and provides robust dispute resolution mechanisms.
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 | Feature | Description |
 |---------|-------------|
-| 📝 **Task Creation** | Create tasks with title, description, reward, deadline, and tags |
-| 👥 **Assignment System** | Admin can assign tasks to qualified contributors |
-| 🔄 **Workflow States** | Tasks flow through Open → Assigned → InProgress → Completed → Verified |
-| 💰 **Automated Payments** | Platform fees automatically deducted, rewards sent to contributors |
-| 👤 **User Profiles** | Build reputation through completed tasks |
-| 🛡️ **Emergency Controls** | Pause contract in case of emergencies |
-| 📊 **Pagination** | Browse tasks efficiently with pagination |
+| Escrowed Task Creation | Creators fund and launch tasks with rewards locked securely inside the smart contract escrow. |
+| Assignment System | Developers claim open tasks, moving the contract status into an active "In Progress" workflow state. |
+| Workflow Automation | Enforces structured transitions: Open → InProgress → Completed → Verified. |
+| Split Dispute Resolution | In case of disagreement, admins act as mediators to resolve disputes and allocate custom reward splits between creators and assignees. |
+| Automated Platform Fees | Platform fees (in basis points) are calculated and routed to a designated fee recipient address upon task completion. |
+| Task Cancellations | Creators can cancel open tasks and withdraw locked reward funds if no developer has claimed the work. |
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Task Manager Contract                     │
+│                    TaskManager Pro Contract                  │
 ├─────────────────────────────────────────────────────────────┤
 │                        Storage Layer                         │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │
-│  │    Tasks     │  │    Users     │  │    Rewards       │  │
-│  └──────────────┘  └──────────────┘  └──────────────────┘  │
+│  ┌──────────────┐  ┌──────────────────┐  ┌────────────────┐  │
+│  │    Tasks     │  │  Escrow Balances  │  │ Platform Config│  │
+│  └──────────────┘  └──────────────────┘  └────────────────┘  │
 ├─────────────────────────────────────────────────────────────┤
 │                      Business Logic                          │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │
-│  │  Task Flow   │  │    Auth      │  │  Payment Calc    │  │
-│  └──────────────┘  └──────────────┘  └──────────────────┘  │
+│  ┌──────────────┐  ┌──────────────────┐  ┌────────────────┐  │
+│  │ Workflow State│  │ Dispute Arbitrage│  │ Payout Splits  │  │
+│  └──────────────┘  └──────────────────┘  └────────────────┘  │
 ├─────────────────────────────────────────────────────────────┤
 │                       Soroban SDK                           │
 └─────────────────────────────────────────────────────────────┘
                                │
                                ▼
-                    ┌─────────────────────┐
-                    │   Stellar Network   │
-                    └─────────────────────┘
+                     ┌─────────────────────┐
+                     │   Stellar Network   │
+                     └─────────────────────┘
 ```
 
 ---
 
-## 🚀 Quick Start for Contributors
-
-### Prerequisites
-
-```bash
-# Install Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# Add WebAssembly target
-rustup target add wasm32-unknown-unknown
-
-# Install Stellar CLI
-curl -fsSL https://github.com/stellar/stellar-cli/raw/main/install.sh | sh
-```
-
-### Clone and Build
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/stellar-task-manager.git
-cd stellar-task-manager
-
-# Build the contract
-cargo build --target wasm32-unknown-unknown --release
-
-# Run tests
-cargo test
-```
-
-### Project Structure
+## Project Structure
 
 ```
-stellar-task-manager/
-├── contracts/
-│   └── task_manager/
-│       ├── Cargo.toml          # Contract dependencies
-│       └── src/
-│           ├── lib.rs           # Main contract code
-│           └── test.rs          # Unit tests
-├── Cargo.toml                    # Workspace configuration
-├── README.md                      # This file
-└── CONTRIBUTING.md                # Contribution guidelines
+Latterfix/
+├── contract/              # Soroban Smart Contract (Rust)
+│   ├── Cargo.toml         # Contract build configuration
+│   └── src/
+│       ├── lib.rs         # Smart contract logic (escrow, dispute, config)
+│       └── test.rs        # Comprehensive automated test suite
+├── backend/               # API Caching and Sync Server (Node.js/Express)
+│   ├── index.js           # Server routes & SQLite database storage
+│   └── package.json       # Backend dependencies (express, sqlite3, stellar-sdk)
+├── frontend/              # Interactive Client Dashboard (Next.js 15)
+│   ├── app/               # React components, styles, layouts
+│   └── package.json       # Frontend dependencies (tailwind, lucide, framer-motion)
+└── assets/                # Design assets and brand logos
 ```
 
 ---
 
-## 📚 Smart Contract Overview
+## Smart Contract Overview
 
-### Core Data Structures
+### Data Schemas
 
 ```rust
-// Task structure
+// Task structure stored on-chain
 pub struct Task {
     pub id: u32,
     pub title: String,
@@ -125,137 +94,88 @@ pub struct Task {
     pub assignee: Option<Address>,
     pub status: TaskStatus,
     pub created_by: Address,
-    pub created_at: u64,
-    pub deadline: Option<u64>,
     pub tags: Vec<String>,
 }
 
-// User profile
-pub struct UserProfile {
-    pub address: Address,
-    pub username: Option<String>,
-    pub reputation: u32,
-    pub completed_tasks: u32,
-    pub joined_at: u64,
-    pub bio: Option<String>,
-}
-
-// Task status enum
+// Enforced task states
 pub enum TaskStatus {
     Open,
-    Assigned,
     InProgress,
     Completed,
+    Disputed,
     Verified,
     Cancelled,
 }
 ```
 
-### Workflow Diagram
+### Core API Methods
 
-```
-┌─────────┐     ┌──────────┐     ┌────────────┐     ┌───────────┐     ┌──────────┐
-│  Open   │────▶│ Assigned │────▶│ InProgress │────▶│ Completed │────▶│ Verified │
-└─────────┘     └──────────┘     └────────────┘     └───────────┘     └──────────┘
-      │               │                  │                  │                │
-      └───────────────┴──────────────────┴──────────────────┴────────────────┘
-                                      │
-                                      ▼
-                                ┌───────────┐
-                                │ Cancelled │
-                                └───────────┘
-```
+*   `initialize(env: Env, admin: Address, platform_fee_bps: u32, token_contract: Address, fee_recipient: Address)`
+    Configures contract admin, platform fee percentage (in BPS), token contract address, and designated fee payout destination.
+*   `create_task(env: Env, creator: Address, title: String, description: String, reward: i128, tags: Vec<String>) -> u32`
+    Creates a new task. Transports the task reward from the creator to the contract's escrow address.
+*   `assign_task(env: Env, assignee: Address, task_id: u32)`
+    Claims an open task and changes its status to `InProgress`.
+*   `submit_work(env: Env, assignee: Address, task_id: u32, delivery_url: String)`
+    Allows the assignee to submit their delivery link, advancing the status to `Completed`.
+*   `complete_task(env: Env, caller: Address, task_id: u32)`
+    Releases the locked escrow tokens to the assignee (minus the platform fee) and closes the task. Executable by creator or admin.
+*   `cancel_task(env: Env, creator: Address, task_id: u32)`
+    Cancels an open task and refunds the escrowed tokens back to the creator.
+*   `dispute_task(env: Env, caller: Address, task_id: u32)`
+    Transitions an active or completed task into a `Disputed` state.
+*   `resolve_dispute(env: Env, admin: Address, task_id: u32, creator_refund: i128, assignee_payout: i128)`
+    Allows the admin to resolve a dispute by allocating customized reward splits between the creator and the developer.
 
 ---
 
-## 🧪 Testing
+## Development and Testing
 
-Run the test suite:
+### Smart Contract
+
+To run automated unit tests that verify initialization, contract states, payouts, fee deductions, and dispute splits:
 
 ```bash
-# Run all tests
+cd contract
 cargo test
-
-# Run with output
-cargo test -- --nocapture
-
-# Run specific test
-cargo test test_initialize
 ```
 
----
-
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
-
----
-
-## 🛠️ Development Tips
-
-### Useful Commands
+To build the contract into an optimized WASM target:
 
 ```bash
-# Format code
-cargo fmt
-
-# Lint code
-cargo clippy
-
-# Build optimized WASM
+cd contract
 cargo build --target wasm32-unknown-unknown --release
-
-# Check contract size
-ls -lh target/wasm32-unknown-unknown/release/*.wasm
 ```
 
-### Common Patterns
+### Backend Server
 
-```rust
-// Storage pattern
-pub fn get_data(env: &Env, key: DataKey) -> Option<Value> {
-    env.storage().instance().get(&key)
-}
+Start the API caching backend (port 3001) that verifies transactions via the Stellar Horizon client:
 
-// Authorization pattern
-pub fn admin_only(env: &Env, caller: Address) {
-    let admin: Address = env.storage().instance().get(&DataKey::Admin).unwrap();
-    if admin != caller {
-        panic!("Not authorized");
-    }
-    caller.require_auth();
-}
+```bash
+cd backend
+npm install
+npm start
+```
 
-// Error handling pattern
-pub fn safe_operation(env: &Env) -> Result<(), Error> {
-    if Self::is_paused(env) {
-        return Err(Error::ContractPaused);
-    }
-    Ok(())
-}
+### Frontend Client
+
+Launch the interactive Next.js web application (port 3000):
+
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
 ---
 
-## 📖 Learning Resources
+## Learning Resources
+
+### Stellar Soroban
+- [Soroban Documentation](https://soroban.stellar.org/docs)
+- [Stellar Developer Discord](https://discord.gg/stellar)
+- [Testing Soroban Contracts Reference](https://soroban.stellar.org/docs/fundamentals-and-concepts/testing)
 
 ### Rust
 - [The Rust Book](https://doc.rust-lang.org/book/)
 - [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
-
-### Stellar Soroban
-- [Soroban Documentation](https://soroban.stellar.org/docs)
-- [Soroban GitHub Examples](https://github.com/stellar/soroban-examples)
-- [Stellar Developer Discord](https://discord.gg/stellar)
-
-### Smart Contract Development
-- [Smart Contract Best Practices](https://soroban.stellar.org/docs/reference/security)
-- [Testing Soroban Contracts](https://soroban.stellar.org/docs/fundamentals-and-concepts/testing)
-
----
-
-
-<div align="center">
-  <sub>Built with ❤️ for the Stellar community</sub>
-  <br/>
-  <sub>⭐ Star us on GitHub — it motivates us!</sub>
-</div>

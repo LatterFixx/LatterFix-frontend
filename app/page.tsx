@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import Features from "./components/Features";
 import BountiesPreview from "./components/BountiesPreview";
+import ContractExplorer from "./components/ContractExplorer";
 import CallToAction from "./components/CallToAction";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <BountiesPreview />
         <Features />
+        <ContractExplorer />
         <CallToAction />
       </main>
     </>
